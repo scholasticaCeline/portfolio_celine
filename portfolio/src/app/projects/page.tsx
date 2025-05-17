@@ -19,7 +19,7 @@ const projects = [
     {
         title: "PartnerGO - Partnership Searching",
         description: "A full stack website for searching partnership with other company/organizations.",
-        image: "/placeholder.svg?height=400&width=600",
+        image: "/Project2.png",
         tags: ["PHP", "Laravel", "MySQL", "CSS"],
         githubUrl: "https://github.com/scholasticaCeline/partnergo",
     },

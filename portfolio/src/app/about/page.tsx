@@ -9,21 +9,18 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 
 const hardSkills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
   "HTML/CSS",
+  "Javascript",
+  "Typescript",
+  "React",
+  "PHP",
+  "Laravel",
+  "Next.js",
   "Tailwind CSS",
   "Git",
-  "MongoDB",
-  "SQL",
-  "GraphQL",
-  "REST API",
+  "MySQL",
 ]
 
-// Soft skills
 const softSkills = [
   "Communication",
   "Teamwork",
@@ -47,7 +44,7 @@ export default function AboutPage() {
       <div className="relative z-10 pt-20 px-4 md:px-8 max-w-6xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-white">About Me</h1>
 
-        {/* Bio Section */}
+        {/* Bio */}
         <section className="mb-16 grid md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-1 flex justify-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-violet-500 shadow-lg shadow-violet-500/20">
@@ -65,14 +62,10 @@ export default function AboutPage() {
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold mb-4 text-white">Who I Am</h2>
             <p className="text-gray-300 mb-4">
-              I'm a passionate developer and designer with a keen eye for detail and a love for creating beautiful,
-              functional digital experiences. With several years of experience in the tech industry, I've worked on a
-              variety of projects ranging from small business websites to complex enterprise applications.
+              Hi! I'm Scholastica Celine Wahyudi, a student from BINUS University who enjoys working on coding projects and learning about tech. I've spent most of my time building websites, apps, and other fun things with code. I like keeping things simple, clean, and easy to use Lately, I've been really interested in artificial intelligence and cybersecurity. AI amazes me — how it can learn, predict, and even create. On the other hand, cybersecurity keeps me curious about how systems work and how to protect them. These two areas keep me learning every day.
             </p>
             <p className="text-gray-300">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-              enjoying outdoor activities. I believe in continuous learning and pushing the boundaries of what's
-              possible in web development.
+              Most of the time, I'm either coding, testing out new tools, or working on side projects to improve my skills. I enjoy problem-solving and turning ideas into real, working software. Outside of tech, I like relaxing with music, checking out cool websites for design ideas, and sometimes just going out for a walk to reset. I'm also active in student organizations to further improve my soft skills in teamwork and leadership.
             </p>
           </div>
         </section>
