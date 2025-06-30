@@ -106,8 +106,8 @@ export const BackgroundBeamsWithCollision = ({
 const CollisionMechanism = React.forwardRef<
   HTMLDivElement,
   {
-    containerRef: React.RefObject<HTMLDivElement>
-    parentRef: React.RefObject<HTMLDivElement>
+    containerRef: React.RefObject<HTMLDivElement | null> // Fixed type to match useRef
+    parentRef: React.RefObject<HTMLDivElement | null> // Fixed type to match useRef
     beamOptions?: {
       initialX?: number
       translateX?: number
@@ -122,7 +122,6 @@ const CollisionMechanism = React.forwardRef<
     }
   }
 >(({ parentRef, containerRef, beamOptions = {} }) => {
-  // Removed unused ref parameter
   const beamRef = useRef<HTMLDivElement>(null)
   const [collision, setCollision] = useState<{
     detected: boolean
@@ -159,7 +158,7 @@ const CollisionMechanism = React.forwardRef<
 
     const animationInterval = setInterval(checkCollision, 50)
     return () => clearInterval(animationInterval)
-  }, [cycleCollisionDetected, containerRef, parentRef]) // Added parentRef to dependencies
+  }, [cycleCollisionDetected, containerRef, parentRef])
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {
@@ -243,23 +242,19 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
       ></motion.div>
-      {spans.map(
-        (
-          span, // Removed unused index parameter
-        ) => (
-          <motion.span
-            key={span.id}
-            initial={{ x: span.initialX, y: span.initialY, opacity: 1 }}
-            animate={{
-              x: span.directionX,
-              y: span.directionY,
-              opacity: 0,
-            }}
-            transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-            className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"
-          />
-        ),
-      )}
+      {spans.map((span) => (
+        <motion.span
+          key={span.id}
+          initial={{ x: span.initialX, y: span.initialY, opacity: 1 }}
+          animate={{
+            x: span.directionX,
+            y: span.directionY,
+            opacity: 0,
+          }}
+          transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
+          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"
+        />
+      ))}
     </div>
   )
 }
