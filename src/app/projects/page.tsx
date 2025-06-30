@@ -4,7 +4,6 @@ import { useState } from "react"
 import Navbar from "@/components/ui/navbar"
 import BackgroundParticles from "@/components/ui/background-2"
 import { Meteors } from "@/components/ui/meteors"
-import { Github, ExternalLink } from "lucide-react"
 import Image from "next/image"
 
 // Project data - replace with your actual projects

@@ -1,9 +1,7 @@
 "use client"
 
-import { useState } from "react"
 import Navbar from "@/components/ui/navbar"
 import BackgroundParticles from "@/components/ui/background-2"
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
@@ -33,14 +31,13 @@ const softSkills = [
 ]
 
 export default function AboutPage() {
-
   return (
     <main className="relative min-h-screen overflow-hidden">
-        <Navbar />
-              <div className="absolute inset-0 -z-10">
-                {/* <BackgroundBeamsWithCollision className="bg-gray-900" >{null}</BackgroundBeamsWithCollision> */}
-                <BackgroundParticles />
-              </div>
+      <Navbar />
+      <div className="absolute inset-0 -z-10">
+        {/* <BackgroundBeamsWithCollision className="bg-gray-900" >{null}</BackgroundBeamsWithCollision> */}
+        <BackgroundParticles />
+      </div>
       <div className="relative z-10 pt-20 px-4 md:px-8 max-w-6xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-white">About Me</h1>
 
@@ -48,24 +45,20 @@ export default function AboutPage() {
         <section className="mb-16 grid md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-1 flex justify-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-violet-500 shadow-lg shadow-violet-500/20">
-              <Image
-                src="/Profile2.jpg"
-                alt="Profile"
-                width={320}
-                height={320}
-                className="object-cover"
-                priority
-              />
+              <Image src="/Profile2.jpg" alt="Profile" width={320} height={320} className="object-cover" priority />
             </div>
           </div>
-
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold mb-4 text-white">Who I Am</h2>
             <p className="text-gray-300 mb-4">
-              Hi! I'm Scholastica Celine Wahyudi, a student from BINUS University who enjoys working on coding projects and learning about tech. I've spent most of my time building websites, apps, and other fun things with code. I like keeping things simple, clean, and easy to use Lately, I've been really interested in artificial intelligence and cybersecurity. AI amazes me — how it can learn, predict, and even create. On the other hand, cybersecurity keeps me curious about how systems work and how to protect them. These two areas keep me learning every day.
+              {
+                "Hi! I'm Scholastica Celine Wahyudi, a student from BINUS University who enjoys working on coding projects and learning about tech. I've spent most of my time building websites, apps, and other fun things with code. I like keeping things simple, clean, and easy to use Lately, I've been really interested in artificial intelligence and cybersecurity. AI amazes me — how it can learn, predict, and even create. On the other hand, cybersecurity keeps me curious about how systems work and how to protect them. These two areas keep me learning every day."
+              }
             </p>
             <p className="text-gray-300">
-              Most of the time, I'm either coding, testing out new tools, or working on side projects to improve my skills. I enjoy problem-solving and turning ideas into real, working software. Outside of tech, I like relaxing with music, checking out cool websites for design ideas, and sometimes just going out for a walk to reset. I'm also active in student organizations to further improve my soft skills in teamwork and leadership.
+              {
+                "Most of the time, I'm either coding, testing out new tools, or working on side projects to improve my skills. I enjoy problem-solving and turning ideas into real, working software. Outside of tech, I like relaxing with music, checking out cool websites for design ideas, and sometimes just going out for a walk to reset. I'm also active in student organizations to further improve my soft skills in teamwork and leadership."
+              }
             </p>
           </div>
         </section>
@@ -86,11 +79,7 @@ export default function AboutPage() {
                   layoutId="hoverBackground"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
                 />
-                <div
-                  className="relative z-10 p-4 text-center font-semibold text-white"
-                >
-                  {skill}
-                </div>
+                <div className="relative z-10 p-4 text-center font-semibold text-white">{skill}</div>
               </div>
             ))}
           </div>

@@ -1,5 +1,4 @@
 import Navbar from "@/components/ui/navbar"
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision"
 import BackgroundParticles from "@/components/ui/background-2"
 import HomeSection from "@/components/ui/home-page"
 // import HeroSection from "@/components/ui/hero-section"
